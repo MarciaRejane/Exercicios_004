@@ -1,4 +1,4 @@
-import { Button, StyleSheet } from "react-native";
+import { Button, ScrollView, StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
   container: {
@@ -21,18 +21,18 @@ export const styles = StyleSheet.create({
     borderRadius: 5,
     fontWeight: 'bold',
     padding:10,
-    marginBottom: 30,
+
     
   },
   texto: {
     fontSize: 20,
     color: 'black',
-    textShadowColor: '#e0b0ff',
-    textShadowOffset: {width: 2, height: 2},
+    // textShadowColor: '#e0b0ff',
+    // textShadowOffset: {width: 2, height: 2},
     padding: 10,
-    width: 250,
-    height:56,
+    width: 350,
     backgroundColor: 'white',
+    marginVertical:2,
   },
   button: {
     width:60,
@@ -40,11 +40,14 @@ export const styles = StyleSheet.create({
     backgroundColor: '#D8BFD8',
     alignItems: 'center',
     justifyContent:'center',
-    marginLeft:250,
+
   },
   buttonText: {
     color: '#FFF0F5',
     fontWeight:'bold',
     fontSize:20,
+  },
+  scrollView: {
+    flex:1,
   }
 });

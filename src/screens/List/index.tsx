@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Text, View, TextInput, TouchableOpacity} from 'react-native';
+import { Text, View, TextInput, TouchableOpacity, ScrollView} from 'react-native';
 
 import {styles} from './styles';
 
@@ -30,10 +30,13 @@ export default function List() {
       <TouchableOpacity style={styles.button} onPress={handleAddTask}>
         <Text style={styles.buttonText}>+</Text>
       </TouchableOpacity>
-      {tarefas.map((tarefa, index) =>(
 
-      <Text key={index} style={styles.texto}>{tarefa}</Text>
+      <ScrollView style={styles.scrollView}>
+      {tarefas.map((tarefa, index) =>(
+          
+        <Text key={index} style={styles.texto}>{tarefa}</Text>
       ))}
+      </ScrollView>
     </View>
   );
   }
