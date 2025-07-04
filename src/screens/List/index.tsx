@@ -1,13 +1,19 @@
-{/*Foi feito o input usando useState que armazena o valor e mostra o valor salvo em texto */}
 import React, {useState} from 'react';
-import { Text, View, TextInput } from 'react-native';
+import { Text, View, TextInput, TouchableOpacity} from 'react-native';
 
 import {styles} from './styles';
 
 
 export default function List() {
   const [texto, setTexto] = useState('');
- 
+  const [tarefas, setTarefas] = useState<string[]>([]);
+
+  const handleAddTask = () => {
+    if(texto.trim() !== "") {
+      setTarefas([...tarefas, texto]);
+    setTexto("");
+    }
+  };
   
   return (
     <View style={styles.container}>
@@ -21,7 +27,13 @@ export default function List() {
         value={texto}
 
       />
-      <Text style={styles.texto}>{texto}</Text>
+      <TouchableOpacity style={styles.button} onPress={handleAddTask}>
+        <Text style={styles.buttonText}>+</Text>
+      </TouchableOpacity>
+      {tarefas.map((tarefa, index) =>(
+
+      <Text key={index} style={styles.texto}>{tarefa}</Text>
+      ))}
     </View>
   );
   }
