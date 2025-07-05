@@ -14,6 +14,12 @@ export default function List() {
     setTexto("");
     }
   };
+
+  const remover = ( indexRemove:number) => {
+    setTarefas(tarefas.filter((_,index) => index !== indexRemove));
+  };
+
+  
   
   return (
     <View style={styles.container}>
@@ -34,7 +40,14 @@ export default function List() {
       <ScrollView style={styles.scrollView}>
       {tarefas.map((tarefa, index) =>(
           
-        <Text key={index} style={styles.texto}>{tarefa}</Text>
+        <View key={index} style={styles.item}>
+          <Text style={styles.texto}>{tarefa}</Text>
+          <TouchableOpacity style={styles.remover} onPress={() => remover(index)}>
+            <Text style={styles.removerText}>
+              X
+            </Text>
+          </TouchableOpacity>
+        </View>
       ))}
       </ScrollView>
     </View>

@@ -30,7 +30,7 @@ export const styles = StyleSheet.create({
     // textShadowColor: '#e0b0ff',
     // textShadowOffset: {width: 2, height: 2},
     padding: 10,
-    width: 350,
+    width: 250,
     backgroundColor: 'white',
     marginVertical:2,
   },
@@ -49,5 +49,19 @@ export const styles = StyleSheet.create({
   },
   scrollView: {
     flex:1,
-  }
+  },
+  item:{ 
+  },
+  remover:{
+    width:60,
+    height: 56,
+    backgroundColor:'rgb(233, 120, 194)',
+    alignItems: 'center',
+    justifyContent:'center',
+  },
+  removerText:{
+    fontSize: 15,
+    fontWeight: 'bold',
+    color:'#FFF0F5',
+  },
 });
